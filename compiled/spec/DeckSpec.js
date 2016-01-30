@@ -10,13 +10,16 @@
     hand = null;
     beforeEach(function() {
       deck = new Deck();
+      console.log('before', deck);
       return hand = deck.dealPlayer();
     });
     return describe('hit', function() {
       return it('should give the last card from the deck', function() {
-        assert.strictEqual(deck.length, 50);
+        console.log('after hit', deck);
+        assert.strictEqual(deck.get('length', 50));
+        console.log('last', deck.last());
         assert.strictEqual(deck.last(), hand.hit());
-        return assert.strictEqual(deck.length, 49);
+        return assert.strictEqual(deck.get('length', 49));
       });
     });
   });

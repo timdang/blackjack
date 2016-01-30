@@ -18,7 +18,21 @@
     };
 
     Hand.prototype.hit = function() {
-      return this.add(this.deck.pop());
+      var card;
+      card = this.deck.pop();
+      this.add(card);
+      this.bust();
+      return card;
+    };
+
+    Hand.prototype.stand = function() {};
+
+    Hand.prototype.bust = function() {
+      console.log(this.scores());
+      if (this.scores()[0] > 21) {
+        alert('bust');
+        return true;
+      }
     };
 
     Hand.prototype.hasAce = function() {

@@ -31,3 +31,5 @@
   })(Backbone.View);
 
 }).call(this);
+
+//# sourceMappingURL=CardView.js.map

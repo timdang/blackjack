@@ -5,4 +5,13 @@ class window.App extends Backbone.Model
     @set 'deck', deck = new Deck()
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
+    @get('playerHand').on 'stand', =>  @get('dealerHand').dealerTurn()
+    @get('dealerHand').on 'stand', => @compareScores()
 
+  compareScores: ->
+    playerScore = @get('playerHand').getBetterScore()
+    dealerScore = @get('dealerHand').getBetterScore()
+    switch
+      when playerScore > dealerScore then alert 'You Win!!!'
+      when playerScore == dealerScore then alert 'Draw'
+      else alert 'House wins!!!'

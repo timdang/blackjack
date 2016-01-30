@@ -20,7 +20,21 @@
           return _this.render();
         };
       })(this));
+      this.collection.on('bust', (function(_this) {
+        return function() {
+          return _this.alertWinner();
+        };
+      })(this));
       return this.render();
+    };
+
+    HandView.prototype.alertWinner = function() {
+      this.render();
+      if (this.collection.isDealer) {
+        return alert('You win!');
+      } else {
+        return alert('You lose!');
+      }
     };
 
     HandView.prototype.render = function() {
@@ -31,7 +45,7 @@
           model: card
         }).$el;
       }));
-      return this.$('.score').text(this.collection.scores()[0]);
+      return this.$('.score').text(this.collection.getBetterScore());
     };
 
     return HandView;

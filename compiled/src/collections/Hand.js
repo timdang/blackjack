@@ -31,8 +31,8 @@
 
     Hand.prototype.bust = function() {
       if (this.scores()[0] > 21) {
-        console.log('bust');
-        return this.trigger('bust', this);
+        this.trigger('bust', this);
+        return true;
       }
     };
 
@@ -50,6 +50,21 @@
 
     Hand.prototype.scores = function() {
       return [this.minScore(), this.minScore() + 10 * this.hasAce()];
+    };
+
+    Hand.prototype.dealerTurn = function() {
+      this.first().flip();
+      while (this.getBetterScore() < 17) {
+        this.hit();
+      }
+      if (this.getBetterScore() <= 21) {
+        return this.stand();
+      }
+    };
+
+    Hand.prototype.getBetterScore = function() {
+      var score;
+      return score = this.scores()[1] <= 21 ? this.scores()[1] : this.scores()[0];
     };
 
     return Hand;

@@ -10,12 +10,19 @@ class window.Hand extends Backbone.Collection
     card
 
   stand: ->
-
+    @trigger 'stand', @
 
   bust: ->
     if @scores()[0] > 21
-      alert 'bust'
-      true
+      console.log 'bust'
+      @trigger 'bust', @
+
+# dealer logic
+  # while
+    # if they have less than 17
+    # they will call hit
+    # check bust
+  # call stand
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1

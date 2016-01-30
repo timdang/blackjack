@@ -25,13 +25,14 @@
       return card;
     };
 
-    Hand.prototype.stand = function() {};
+    Hand.prototype.stand = function() {
+      return this.trigger('stand', this);
+    };
 
     Hand.prototype.bust = function() {
-      console.log(this.scores());
       if (this.scores()[0] > 21) {
-        alert('bust');
-        return true;
+        console.log('bust');
+        return this.trigger('bust', this);
       }
     };
 

@@ -22,5 +22,3 @@
   })(Backbone.Model);
 
 }).call(this);
-
-//# sourceMappingURL=App.js.map

@@ -57,5 +57,3 @@
   })(Backbone.Collection);
 
 }).call(this);
-
-//# sourceMappingURL=Hand.js.map

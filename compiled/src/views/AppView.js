@@ -41,5 +41,3 @@
   })(Backbone.View);
 
 }).call(this);
-
-//# sourceMappingURL=AppView.js.map

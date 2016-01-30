@@ -13,3 +13,6 @@ describe 'deck', ->
       assert.strictEqual deck.get 'length', 50
       assert.strictEqual deck.last(), hand.hit()
       assert.strictEqual deck.get 'length', 49
+
+  # describe 'bust', ->
+  #   it 'should call bust if the payer has more than 21', ->

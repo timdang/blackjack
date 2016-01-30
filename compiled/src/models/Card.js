@@ -42,5 +42,3 @@
   })(Backbone.Model);
 
 }).call(this);
-
-//# sourceMappingURL=Card.js.map

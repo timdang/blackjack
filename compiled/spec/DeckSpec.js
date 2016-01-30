@@ -22,5 +22,3 @@
   });
 
 }).call(this);
-
-//# sourceMappingURL=DeckSpec.js.map

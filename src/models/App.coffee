@@ -12,6 +12,12 @@ class window.App extends Backbone.Model
     playerScore = @get('playerHand').getBetterScore()
     dealerScore = @get('dealerHand').getBetterScore()
     switch
-      when playerScore > dealerScore then alert 'You Win!!!'
-      when playerScore == dealerScore then alert 'Draw'
-      else alert 'House wins!!!'
+      when playerScore > dealerScore then setTimeout(->
+        alert 'You Win!!!'
+        ,700)
+      when playerScore == dealerScore then setTimeout(->
+        alert 'Draw'
+        ,700)
+      else setTimeout(->
+        alert 'House wins!!!'
+        ,1000)

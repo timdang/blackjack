@@ -33,11 +33,17 @@
       dealerScore = this.get('dealerHand').getBetterScore();
       switch (false) {
         case !(playerScore > dealerScore):
-          return alert('You Win!!!');
+          return setTimeout(function() {
+            return alert('You Win!!!', 700);
+          });
         case playerScore !== dealerScore:
-          return alert('Draw');
+          return setTimeout(function() {
+            return alert('Draw', 700);
+          });
         default:
-          return alert('House wins!!!');
+          return setTimeout(function() {
+            return alert('House wins!!!', 1000);
+          });
       }
     };
 

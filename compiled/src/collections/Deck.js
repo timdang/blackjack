@@ -39,5 +39,3 @@
   })(Backbone.Collection);
 
 }).call(this);
-
-//# sourceMappingURL=Deck.js.map

@@ -10,7 +10,10 @@ class window.HandView extends Backbone.View
 
   alertWinner: ->
     @render()
-    if @collection.isDealer then alert 'You win!' else alert 'You lose!'
+    context = @
+    setTimeout(->
+      if context.collection.isDealer then alert 'You win!' else alert 'You lose!'
+    ,500)
 
   render: ->
     @$el.children().detach()

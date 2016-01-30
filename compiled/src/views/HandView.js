@@ -29,12 +29,16 @@
     };
 
     HandView.prototype.alertWinner = function() {
+      var context;
       this.render();
-      if (this.collection.isDealer) {
-        return alert('You win!');
-      } else {
-        return alert('You lose!');
-      }
+      context = this;
+      return setTimeout(function() {
+        if (context.collection.isDealer) {
+          return alert('You win!');
+        } else {
+          return alert('You lose!');
+        }
+      }, 500);
     };
 
     HandView.prototype.render = function() {

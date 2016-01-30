@@ -30,7 +30,6 @@ npm-debug.log
 node_modules
 
 #coffee
-compiled
 
 # Floobits
 .floo
